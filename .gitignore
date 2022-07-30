@@ -4,6 +4,18 @@
 # Log file
 *.log
 
+# Eclipse Project Files
+.classpath
+.factorypath
+.project
+.settings/
+
+# IntelliJ IDEA Files
+*.iml
+*.ipr
+*.iws
+*.idea
+
 # BlueJ files
 *.ctxt
 
