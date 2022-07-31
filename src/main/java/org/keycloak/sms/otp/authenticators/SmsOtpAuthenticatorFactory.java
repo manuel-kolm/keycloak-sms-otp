@@ -11,7 +11,7 @@ import org.keycloak.models.KeycloakSessionFactory;
 import org.keycloak.provider.ProviderConfigProperty;
 
 public class SmsOtpAuthenticatorFactory implements AuthenticatorFactory {
-	
+
 	private static final String PROVIDER_ID = "sms-authenticator";
 	private static final String DISPLAY_TYPE = "SMS Authentication";
 	private static final String OTP = "otp";

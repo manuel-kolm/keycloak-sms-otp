@@ -81,7 +81,7 @@ public class EmbeddedKeycloakConfig {
 
 			@Override
 			public void close() {
-				// NOOP
+				// nothing
 			}
 		});
 	}

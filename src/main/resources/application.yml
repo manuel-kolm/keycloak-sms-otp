@@ -10,8 +10,8 @@ spring:
 
 keycloak:
   server:
-    contextPath: /auth
-    adminUser:
+    context-path: /auth
+    admin-user:
       username: admin
       password: admin
-    # realmImportFile: customer-realm.json
+    realm-import-file: customer-realm.json

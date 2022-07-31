@@ -9,11 +9,18 @@ import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.RealmModel;
 import org.keycloak.models.UserModel;
 import org.keycloak.sessions.AuthenticationSessionModel;
+import org.keycloak.sms.otp.logic.TokenService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SmsOtpAuthenticator implements Authenticator {
-
-	private static final String PHONE_NUMBER_SETUP_TEMPLATE = "";
-	private static final String TOKEN_INPUT_TEMPLATE = "";
+	
+	private static final String PHONE_NUMBER_SETUP_TEMPLATE = "code-input.ftl";
+	private static final String TOKEN_INPUT_TEMPLATE = "chose-number.ftl";
+	
+	@Autowired
+	private TokenService tokenService;
 
 	@Override
 	public void close() {
@@ -34,6 +41,7 @@ public class SmsOtpAuthenticator implements Authenticator {
 		String enteredToken = context.getHttpRequest().getDecodedFormParameters().getFirst("phoneNumber");
 
 		if (StringUtils.isNoneBlank(enteredPhoneNumber)) {
+			tokenService.sendToken(context);
 			challengeTokenInputTemplate(context);
 		} else if (StringUtils.isNoneBlank(enteredToken)) {
 			AuthenticationSessionModel authSession = context.getAuthenticationSession();

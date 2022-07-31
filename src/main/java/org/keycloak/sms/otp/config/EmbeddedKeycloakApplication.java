@@ -33,7 +33,7 @@ public class EmbeddedKeycloakApplication extends KeycloakApplication {
 	protected ExportImportManager bootstrap() {
 		final ExportImportManager exportImportManager = super.bootstrap();
 		createMasterRealmAdminUser();
-		createBaeldungRealm();
+		createRealm();
 		return exportImportManager;
 	}
 
@@ -57,7 +57,7 @@ public class EmbeddedKeycloakApplication extends KeycloakApplication {
 		session.close();
 	}
 
-	private void createBaeldungRealm() {
+	private void createRealm() {
 		KeycloakSession session = getSessionFactory().create();
 
 		try {

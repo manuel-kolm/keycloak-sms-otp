@@ -35,5 +35,4 @@ public class Application {
 			LOG.info("Embedded Keycloak started: http://localhost:{}{} to use keycloak", port, keycloakContextPath);
 		};
 	}
-
 }

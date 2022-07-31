@@ -2,7 +2,6 @@ package org.keycloak.sms.otp.config;
 
 import java.io.File;
 
-import org.keycloak.Config.Scope;
 import org.keycloak.platform.PlatformProvider;
 import org.keycloak.services.ServicesLogger;
 
